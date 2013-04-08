@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -16,9 +15,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
+import android.content.Intent;
 
 /**
  * 
@@ -105,8 +102,12 @@ public class CreateAlumni extends Activity {
 				
 				Log.d("CREATE", alm.toString());
 				
-				// TODO Activy almni detail 
-				// Tip: Information across Activities goes into an Intent serializing the object in this case
+				Intent intent = new Intent(CreateAlumni.this, AlimniDetail.class);
+				Bundle b = new Bundle();
+				b.putSerializable("alumno", alm);
+				intent.putExtras(b);
+				
+				startActivity(intent);
 			}
 		});
 	}

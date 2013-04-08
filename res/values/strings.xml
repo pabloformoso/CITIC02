@@ -26,5 +26,8 @@
     <string name="title_activity_create_alumni">CreateAlumni</string>
     <string name="action_settings">Settings</string>
     <string name="create_alumni">Alta de alumnos</string>
+    <string name="jose">Soludar a Jose</string>
+    <string name="title_activity_alimni_detail">AlimniDetail</string>
+    <string name="title_activity_alumni_list">Listado de Alumnos</string>
 
 </resources>
