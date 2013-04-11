@@ -1,5 +1,6 @@
 package curso.citic02.alumni;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
 		
 		Button btnCreate = (Button)findViewById(R.id.btnCreate);
 		btnCreate.setOnClickListener(new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(MainActivity.this, CreateAlumni.class);
 				startActivity(i);
@@ -49,6 +51,23 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO 1 - crear el Intent y lanzar la activity
+				Intent i = new Intent(MainActivity.this, AlumniList.class);
+				startActivity(i);
+			}
+		});
+		
+
+		Button btnWeb = (Button)findViewById(R.id.btnWeb);
+		btnWeb.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				/*
+				String url = "http://www.pabloformoso.com";
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(url));
+				*/
+				Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.pabloformoso.com"));
+				startActivity(i);
 			}
 		});
 	}

@@ -1,7 +1,6 @@
 package curso.citic02.alumni;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.ListActivity;
 import android.view.Menu;
 import android.view.View;
@@ -26,6 +25,7 @@ public class AlumniList extends ListActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_alumni_list);
 		// Show the Up button in the action bar.
@@ -40,12 +40,20 @@ public class AlumniList extends ListActivity {
 		
 		// TIP1: El layout de la celda se llama alumni_list_item
 		// TIP2: El tercer par‡metro es el id del TextView donde vamos a poner el nombre
-		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(CONTEXTO, LAYOUT_ITEM, ID_CAMPO_TEXTO, ARRAY)
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.alumni_list_item, R.id.txtName, alumnis);
 				
 		// TODO 3 - asociar al adapter, fijaos de que extienda esta Activity
+		setListAdapter(adapter);
 		
 		getListView().setOnItemClickListener(new OnItemClickListener() {
+			
 			// TODO 4 - completar el Listener con el evento adecuado poniendo en un Toast la posici—n seleccionada
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Toast.makeText(getApplicationContext(), "Alumno " + position, Toast.LENGTH_SHORT).show();
+			}
+			
+			
 		});
 	}
 	

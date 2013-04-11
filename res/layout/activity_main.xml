@@ -36,11 +36,11 @@
             android:text="@string/create_alumni" />
 
         <Button
-            android:id="@+id/btnList"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnWeb"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:text="@string/wip" />
+            android:text="@string/pfe_web" />
 
     </LinearLayout>
 
